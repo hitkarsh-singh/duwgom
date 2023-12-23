@@ -28,7 +28,6 @@
         </div>
 
         <div class="section" id="yesSection" style="display: none;">
-            <!-- Content for the "Yes" section -->
             <h1 class="header_text">Yeeeyyyy!!</h1>
             <audio id="backgroundAudio" loop>
                 <source src="D:\Downloads New\Mitski - My Love Mine All Mine [TubeRipper.com].mp3" type="audio/mp3">
@@ -50,13 +49,10 @@
             });
 
             function handleGifClick() {
-                // Hide the helloSection
                 document.getElementById('helloSection').style.display = 'none';
 
-                // Show the indexSection
                 document.getElementById('indexSection').style.display = 'block';
 
-                // Play the audio for the indexSection
                 audio.play().then(function () {
                     console.log('Audio for indexSection started playing.');
                 }).catch(function (error) {
@@ -65,13 +61,10 @@
             }
 
             function loadYesPage() {
-                // Hide the indexSection
                 document.getElementById('indexSection').style.display = 'none';
 
-                // Show the yesSection
                 document.getElementById('yesSection').style.display = 'block';
 
-                // Play the audio for the yesSection
                 audio.play().then(function () {
                     console.log('Audio for yesSection started playing.');
                 }).catch(function (error) {
@@ -88,7 +81,6 @@
     var x = Math.random() * (window.innerWidth - button.offsetWidth);
     var y = Math.random() * (window.innerHeight - button.offsetHeight);
 
-    // Ensure the button stays within the window boundaries
     x = Math.max(0, Math.min(x, window.innerWidth - button.offsetWidth));
     y = Math.max(0, Math.min(y, window.innerHeight - button.offsetHeight));
 
