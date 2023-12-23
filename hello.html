@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./styles.css">
+</head> 
+<body>
+    <div class="container" id="contentContainer">
+        <div class="section" id="helloSection">
+            <h1 class="header_text" style="margin-left: 100px;">Hello my name is moobu and I love potatoes!</h1>
+            <audio id="backgroundAudio" loop>
+                <source src="Mitski - My Love Mine All Mine [TubeRipper.com].mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+            <div class="gif_container" onclick="handleGifClick()">
+                <img src="https://media.giphy.com/media/W6o3MfP1ldc0K8sb38/giphy.gif" alt="Hello GIF">
+            </div>
+        </div>
+
+        <div class="section" id="indexSection" style="display: none;">
+            <h1 class="header_text" style="margin-left: 130px;">Do you want to go out on a date with me?</h1>
+            <div class="gif_container">
+                <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDdtZ2JiZDR0a3lvMWF4OG8yc3p6Ymdvd3g2d245amdveDhyYmx6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif" alt="Cute animated illustration">
+            </div>
+            <div class="buttons">
+                <button class="btn" id="yesButton" onclick="loadYesPage()">Yes</button>
+                <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
+            </div>
+        </div>
+
+        <div class="section" id="yesSection" style="display: none;">
+            <!-- Content for the "Yes" section -->
+            <h1 class="header_text">Yeeeyyyy!!</h1>
+            <audio id="backgroundAudio" loop>
+                <source src="D:\Downloads New\Mitski - My Love Mine All Mine [TubeRipper.com].mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+            <div class="gif_container">
+                <img src="https://media0.giphy.com/media/T86i6yDyOYz7J6dPhf/giphy.gif" alt="Cute animated illustration">
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var audio = document.getElementById('backgroundAudio');
+                audio.play().then(function () {
+                    console.log('Audio started playing.');
+                }).catch(function (error) {
+                    console.error('Error starting audio playback:', error);
+                });
+            });
+
+            function handleGifClick() {
+                // Hide the helloSection
+                document.getElementById('helloSection').style.display = 'none';
+
+                // Show the indexSection
+                document.getElementById('indexSection').style.display = 'block';
+
+                // Play the audio for the indexSection
+                audio.play().then(function () {
+                    console.log('Audio for indexSection started playing.');
+                }).catch(function (error) {
+                    console.error('Error starting audio playback for indexSection:', error);
+                });
+            }
+
+            function loadYesPage() {
+                // Hide the indexSection
+                document.getElementById('indexSection').style.display = 'none';
+
+                // Show the yesSection
+                document.getElementById('yesSection').style.display = 'block';
+
+                // Play the audio for the yesSection
+                audio.play().then(function () {
+                    console.log('Audio for yesSection started playing.');
+                }).catch(function (error) {
+                    console.error('Error starting audio playback for yesSection:', error);
+                });
+            }
+
+            function nextPage() {
+                window.location.href = "yes.html";
+            }
+            function moveButton() {
+    console.log("moveButton called");
+    var button = document.getElementById('noButton');
+    var x = Math.random() * (window.innerWidth - button.offsetWidth);
+    var y = Math.random() * (window.innerHeight - button.offsetHeight);
+
+    // Ensure the button stays within the window boundaries
+    x = Math.max(0, Math.min(x, window.innerWidth - button.offsetWidth));
+    y = Math.max(0, Math.min(y, window.innerHeight - button.offsetHeight));
+
+    button.style.left = `${x}px`;
+    button.style.top = `${y}px`;
+}
+
+
+        </script>
+    </div>
+</body> 
+</html>
